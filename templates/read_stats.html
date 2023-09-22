@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>resourcehub</title>
+        <meta charset = 'UTF-8'>
+        <link rel="stylesheet" href="../static/css/style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <script src="../static/js/main.js"></script>
+    </head>
+    <body>
+        <header>
+            <a href="./form.html"><h3>Resourcehub</h3></a>
+            <div class = search_icon onclick='myFun2()'>
+                <img src="../static/images/search-interface-symbol.png" width="15px" height="15px" alt="Search">
+            </div>
+            <div class = cancel-search onclick="myFun3()">&larr;</div>
+            <form class="searchbar" action="/read_stats.html" method="GET">
+                <button type="submit" id="searchbar-btn">
+                    <img src="../static/images/search-interface-symbol.png" width="15px" height="15px" alt="Search">
+                </button>
+                <input type="text" name="query" id="searchInput" required>
+            </form>
+            <nav>
+                <a href="/logout">Logout</a>
+                <div class = user onclick="toggleProfile()">
+                    {{username}}
+                    <div class = pic>
+                        <img src='../static/uploads/{{filename}}'>
+                    </div>
+                </div>
+            </nav>
+            <div class = profile-pic>
+                <h3>Upload profile picture</h3>
+                <form action="/upload" method="post" enctype="multipart/form-data">
+                    <div class = q>
+                        <input type="file" name="file" id="file" accept="image/jpeg, image/jpg, image/png, image/gif" required>
+                        <div class = can onclick="clearFile()">X</div>
+                    </div>
+                    <input type="submit" value="Upload" id="submit-pic">
+                </form>
+            </div>  
+        </header>
+        <div class = container>
+            <h3>Create a post</h3>
+            <form action="/read_stats.html" method="POST">
+                <div class = title>
+                    <label for="title">title</label>
+                    <input type="text" name="title" id="title" required>
+                </div>
+                <div class = content>
+                    <label for="title">content</label>
+                    <textarea name="content" id="content" required></textarea>
+                </div>
+                <input type="submit" value="post" id="post">
+            </form>
+        </div>
+        <div class = posts>
+            <p class = no_match>{{ message }}</p>
+            {% for row in results %}
+            <div class = post>
+                <div class = x>
+                    {% set user = uploaded_files|find_user(row[2]) %}
+                    {% if user is none %}
+                        <div class="pic1">
+                            <img src='../static/uploads/person.png'>
+                        </div>
+                    {% else %}
+                        <div class="pic1">
+                            <img src='../static/uploads/{{ user }}'>
+                        </div>      
+                    {% endif %}
+                    <div class = b>
+                        <div class = ti>{{ row[1] }}</div>
+                        <div class = f>By: {{ row[2] }}</div>
+                    </div>
+                </div>
+                <div class = co>{{ row[3]|autolink|safe }}</div>
+                <div class = g>
+                    {% if row[2] == username %}
+                        <a href="/delete?post_id={{row[0]}}" class = del>
+                            <img src="../static/images/dustbin1.png" height="14px" width="12px">
+                            delete
+                        </a>   
+                    {% endif %}
+                    <button class="comment-btn" onclick="toggleCommentForm('{{ row[0] }}')">Comment</button>
+                </div>
+                <form action="/add_comment" method="POST" class="comment-form" id="comment-form-{{ row[0] }}">
+                    <input type="hidden" name="post_id" value="{{ row[0] }}">
+                    <div class="comment-input">
+                        <div class = cancel-btn onclick="toggleCommentForm('{{ row[0] }}')">X</div>
+                        <label for="comment">Comment</label>
+                        <textarea name="comment" id="comment" required></textarea>
+                        <input type="submit" value="Post Comment" id="post_comment">
+                    </div>
+                </form>
+                {% for comment in comments %}
+                    {% if comment[0] == row[0] %}
+                        <div class = comm>
+                            <div class = f>By: {{ comment[2] }}</div>
+                            <div class = co>{{ comment[3]|autolink|safe }}</div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>    
+            {% endfor %}
+        </div> 
+        <footer>
+            <div class = footer_div>
+                <h4>Contact us</h4>
+                <a href="https://www.instagram.com/reso.urcehub/"><img src="../static/images/instagram.png" width="16px" height="16px"></a>
+                <a href="#"><img src="../static/images/facebook.png" width="16px" height="16px"></a>
+                <a href="#"><img src="../static/images/twitter.png" width="16px" height="16px"></a>
+            </div>
+            <div class="copyright"><h6>&copy;resourcehub 2023. All rights reserved</h6></div>
+        </footer>    
+    </body>
+</html>

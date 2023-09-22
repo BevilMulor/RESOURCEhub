@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>LOGIN</title>
+        <meta charset = 'UTF-8'>
+        <link rel="stylesheet" href="../static/css/login.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class = container>
+            <h3 class = login-logo>Resourcehub</h3>
+            <form action="/login" method="POST">
+                <h3>Login</h3>
+                <p class = error>{{error_message}}</p>   
+                <div class="login-c">
+                    {% with messages = get_flashed_messages(category_filter=["signup","logout"]) %}
+                        {% if messages %}
+                            <p class="login fade-out">{{ messages[0] }}</p>
+                        {% endif %}
+                    {% endwith %}
+                </div>
+                <div class = us>
+                    <label for= username>Username</label>
+                    <input type="text" id="username" name="username" required><br><br>
+                </div>
+                <div class = pa>
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required><br><br>
+                </div>
+                <input type="submit" value="Login" id = submit>
+            </form>
+            <h4>Don't have an account?<a href="./signup.html" class = signup>Register</a></h4>
+        </div>
+    </body>
+</html>

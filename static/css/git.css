@@ -1,0 +1,501 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f2f2f2;
+    color: black;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+footer{
+    display: flex;
+    border-top: 1px solid grey;
+    background-color: white;
+    height: 5rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer h4{
+    font-weight: 500;
+    margin-left: 2rem;
+    font-size: medium;
+    margin-top: 0.3rem;
+}
+
+footer a{
+    margin-left: 1rem;
+    margin-bottom: 0.3rem;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    border-bottom: 2px solid white;
+    height: 5rem;
+    box-shadow: 2px 4px 5px lightgrey;
+}
+
+header h3{
+    font-weight: 400;
+    font-size: xx-large;
+    font-family: 'Dancing Script', cursive;
+    margin-left: 1rem;
+    color: green;
+}
+
+nav {
+    width: 17rem;
+    display: flex;
+    align-items: center;
+}
+
+header a{
+    color: black;
+    margin-right: 1rem;
+    text-decoration: none;   
+}
+
+header a:hover{
+    color: blue;
+}
+
+.user {
+    display: flex;
+    margin-right: 1rem;
+    align-items: center;
+}
+
+.user:hover {
+    border: 1px solid black;
+    border-radius: 0.5rem;
+}
+
+.pic{
+    border: 1px solid green;
+    width: 1.7rem;
+    height: 1.7rem;
+    margin-left: 0.3rem;
+    border-radius: 3rem;
+    overflow: hidden;
+}
+
+.pic img{
+    width: 100%;
+    height: 100%;
+}
+
+.profile-pic {
+    position: absolute;
+    font-size: small;
+    top: 5.1rem;
+    right: 0;
+    background-color: white;
+    width: 15rem;
+    height: 8rem;
+    border: 1px solid green;
+    border-radius: 6px;
+    display: none;
+}
+
+.profile-pic h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: small;
+    margin-top: 1rem;
+}
+
+.profile-pic form {
+    display: flex;
+    flex-direction: column;
+    height: 5rem;
+    justify-content: center;
+}
+
+#submit-pic {
+    width: 5rem;
+    height: 1.5rem;
+    background: white;
+    border: 1px solid green;
+    color: green;
+    border-radius: 6px;
+    margin-top: 1rem;
+    margin-left: 4.7rem;
+}
+
+#submit-pic:hover{
+    background-color: #f2f2f2;
+}
+
+#file {
+    margin-left: 1rem;
+}
+
+.can {
+    width: 1rem;
+    height: 1rem;
+    cursor: pointer;
+    margin-right: 0.7rem;
+    font-size:smaller;
+    font-weight: 800;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.big-container {
+    width: 100%;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.resource {
+    background: #ffffff;
+    padding: 1rem;
+    width: 50rem;
+    min-height: 4rem;
+    border: 1px solid lightgrey;
+    box-shadow: 2px 4px 5px lightgrey;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.link {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.link a{
+    border-radius: 6px;
+    width: 8rem;
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    background-color: green;
+}
+
+.new {
+    display: flex;
+    justify-content: space-between;
+    width: 10rem;
+}
+
+.topic {
+    display: flex;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.ti {
+    display: flex;
+    justify-content: flex-start;
+    width: 30rem;
+    font-size:xx-large;
+    font-weight: bolder;
+}
+
+.del{
+    background: green;
+    border: 1px solid green;
+    color: white;
+    width: 4.5rem;
+    height: 1.5rem;
+    cursor: pointer;
+    border-radius: 0.3rem;
+    text-decoration: none;
+    font-size: small;
+    display: flex;
+    align-items: center;
+}
+
+.del img{
+    margin-left: 0.3rem;
+    margin-right: 0.2rem;
+    margin-bottom: 0.1rem;
+}
+
+.footer_div {
+    display: flex;
+    align-items: center;
+}
+
+.copyright {
+    margin-right: 1rem;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    margin-top: 0.2rem;
+}
+
+.copyright h6 {
+    font-size: small;
+}
+
+.feedback {
+    margin-top: 1rem;
+    display: none;
+}
+
+.rate_pop {
+    width: 4rem;
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: green;
+    color: white;
+    border-radius: 6px;
+    border: none;
+}
+
+.radio_0 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.feed_form {
+    display: flex;
+    flex-direction: column;
+    border: 1px  solid lightgrey;
+    justify-content: space-around;
+    width: 100%;
+    height: 15rem;
+    background: white;
+    box-shadow: 2px 4px 5px lightgrey;
+}
+
+#submit_rating {
+    background: green;
+    color: white;
+    height: 2rem;
+    width: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    margin-left: 2rem;
+    border: none;
+}
+
+.how {
+    font-size: medium;
+    font-weight: 400;
+}
+
+.hea {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.ra {
+    width: 10rem;
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
+    font-size: x-large;
+    color: green;
+}
+
+.q {
+    display: flex;
+    align-items: center;
+}
+
+/* responsiveness*/
+.hide {
+    display: flex;
+}
+
+.hamburger {
+    display:flex;
+    flex-direction: column;
+}
+
+.line {
+    width: 1.5625rem;
+    height: 0.125rem;
+    background-color: black;
+    margin-top: 0.1875rem;
+}
+
+.menu-toggle { 
+    margin-right: 2.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+.drop {
+    position: absolute;
+    display: none;
+    top: 5rem;
+    width: 100%;
+    min-height: 3rem;
+    background: white;
+    box-shadow: 2px 4px 5px lightgrey;
+    border-top: 1px solid lightgrey;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.drop a {
+    border-bottom: 1px solid lightgrey;
+    width: 105%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2rem;
+}
+
+/*rating -added after*/
+.radio_class {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.feed_text {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin-left: 2rem;
+}
+
+@media (max-width: 768px) {
+    .feed_text{
+        margin-left: 1rem;
+    }
+
+    .radio_class {
+        flex-direction: column;
+        height: 13rem;
+    }
+
+    .menu-toggle { 
+        display: block;
+        margin-left: 1rem;
+    }
+
+    .hide {
+        display: none;
+    }
+
+    nav {
+        width: 7rem;
+        justify-content: flex-end;
+    }
+
+    header a {
+        margin-top: 0.2rem;
+    }
+
+    .resource {
+        width:20rem;
+    }
+
+    .ti {
+        font-size: larger;
+    }
+
+    .ra {
+        font-size: larger;
+    }
+
+    .desc {
+        font-size: medium;
+    }
+
+    .how {
+        font-size: medium;
+    }
+
+    .footer_div {
+        width: 15rem;
+        height: 3rem;
+    }
+
+    footer h4 {
+        margin-left: 1rem;
+        font-size: small;
+    }
+
+    footer h6 {
+        font-size: small;
+    }
+
+    header h3 {
+        font-size: x-large;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .copyright {
+        padding-left: 1rem;
+    }
+
+    .feed_form {
+        flex-direction: column;
+        align-items: flex-start;
+        height: 25rem;
+    }
+
+    .radio_0 {
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        margin-left: 1rem;
+        width: 10rem;
+    }
+
+    #submit_rating {
+        margin-left: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .radio_0:nth-of-type(1) label {
+        margin-right: 1rem;
+    }
+
+    .radio_0:nth-of-type(2) label {
+        margin-right: 1.2rem;
+    }
+
+    .radio_0:nth-of-type(3) label {
+        margin-right: 0.9rem;
+    }
+
+    .radio_0:nth-of-type(4) label {
+        margin-right: 1.28rem;
+    }
+
+    .radio_0:nth-of-type(5) label {
+        margin-right: 1.44rem;
+    }
+
+    .radio_0:nth-of-type(6) label {
+        margin-right: 0.54rem;
+    }
+}
